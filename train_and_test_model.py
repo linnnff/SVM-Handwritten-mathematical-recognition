@@ -89,11 +89,17 @@ def run_train():
     print(t1 - t0)
     clf = trainer.svc(X, y)
     print(time.time() - t1)
-    joblib.dump(clf,"./mnist_svm.m", compress = 3)
+    #joblib.dump(clf,"./mnist_svm.m", compress = 3)
     trainer.save_model(clf, "mnist_svm.m")
+
+def run_test():
+    loader = DataLoader()
     X_test, y_test = loader.get_data_labels("test")
     tester = Tester("mnist_svm.m")
     mt, score, repo = tester.clf_metrics(X_test, y_test)
-    return clf, X, y
- 
+    print(mt)
+    print(score)
+    print(repo)
+#测试  训练     
+run_test()
 run_train()
