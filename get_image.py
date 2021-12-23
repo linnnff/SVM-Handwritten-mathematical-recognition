@@ -2,9 +2,10 @@ import numpy as np
 import struct 
 from PIL import Image 
 import os 
+#训练集改成   size1 = 7840016, size2 = 10008, root = "test"
 def make_img(fn_img = "train-images-idx3-ubyte\\train-images.idx3-ubyte", 
              fn_label = "train-labels-idx1-ubyte\\train-labels.idx1-ubyte", 
-             size1 = 47040016, size2 = 60008, root = "train2"):
+             size1 = 47040016, size2 = 60008, root = "train"):
     fmt_img1 = ">IIII"
     offset_img1 = offset_label1= 0
     fmt_label1 = ">II"
